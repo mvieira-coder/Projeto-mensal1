@@ -1,7 +1,8 @@
-import java.util.ArrayList; 
-import java.util.List;
-import java.util.Scanner; 
 
+import com.locadora.core.Locadora;
+import com.locadora.veiculo.Veiculo;
+
+import java.util.Scanner;
 
 public class SistemaLocacao {
     public static void main(String[] args) {
@@ -31,17 +32,8 @@ public class SistemaLocacao {
                     scanner.nextLine();
                     double total = veiculoSelecionado.calcularPreco(horas);
                     
-                    System.out.print("\nEscolha a forma de pagamento (Cartão/Dinheiro/Pix): ");
-                    String pagamento = scanner.nextLine();
-                    
+                    System.out.println("\nLocação realizada com sucesso! Valor total: R$ " + total);
                     veiculoSelecionado.locar();
-                    System.out.println("==== CONFIRMAÇÃO DE LOCAÇÃO ====");
-                    System.out.println("Locatário: " + nomeLocatario);
-                    veiculoSelecionado.exibirDetalhes();
-                    System.out.println("Horas locadas: " + horas);
-                    System.out.println("Valor total: R$ " + total);
-                    System.out.println("Forma de pagamento: " + pagamento);
-                    System.out.println("\nLocação realizada com sucesso!");
                 }
             } else if (opcao == 2) {
                 break;

@@ -1,14 +1,14 @@
-package com.locadora.core;
+package locadora.core;
 
 // Importa as classes de veículos (Carro, Moto, etc.) e a classe Veiculo.
-import com.locadora.veiculo.Carro;
-import com.locadora.veiculo.Moto;
-import com.locadora.veiculo.BicicletaEletrica;
-import com.locadora.veiculo.PatineteEletrico;
-import com.locadora.veiculo.Barco;
+import locadora.veiculo.Carro;
+import locadora.veiculo.Moto;
+import locadora.veiculo.BicicletaEletrica;
+import locadora.veiculo.PatineteEletrico;
+import locadora.veiculo.Barco;
 import java.util.ArrayList;
 import java.util.List;
-import com.locadora.veiculo.Veiculo;
+import locadora.veiculo.Veiculo;
 
 // Classe Locadora, que gerencia os veículos disponíveis para locação.
 public class Locadora {

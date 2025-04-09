@@ -1,4 +1,4 @@
-package com.locadora.veiculo;
+package locadora.veiculo;
 
 public interface Alugavel {
     void exibirDetalhes();

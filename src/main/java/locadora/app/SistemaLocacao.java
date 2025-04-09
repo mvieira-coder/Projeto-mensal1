@@ -1,9 +1,9 @@
-package com.locadora.app;
+package locadora.app;
 
 import java.util.Scanner;
-import com.locadora.core.Locadora;
-import com.locadora.core.Pagamento;
-import com.locadora.veiculo.Veiculo;
+import locadora.core.Locadora;
+import locadora.core.Pagamento;
+import locadora.veiculo.Veiculo;
 
 public class SistemaLocacao {
     public static void main(String[] args) {

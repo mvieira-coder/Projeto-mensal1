@@ -1,4 +1,4 @@
-package com.locadora.core;
+package locadora.core;
 
 public class Pagamento {
     private double valorTotal;

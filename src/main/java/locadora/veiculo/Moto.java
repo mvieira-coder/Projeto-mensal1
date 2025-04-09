@@ -1,4 +1,4 @@
-package com.locadora.veiculo;
+package locadora.veiculo;
 
 public class Moto extends Veiculo {
     public Moto(String identificador, String modelo, double precoHora) {

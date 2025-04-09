@@ -1,4 +1,6 @@
-package com.locadora.veiculo;
+package locadora.veiculo;
+
+
 
 public abstract class Veiculo implements Alugavel {
     // Atributos privados da classe Veiculo:
@@ -13,7 +15,8 @@ public abstract class Veiculo implements Alugavel {
         this.identificador = identificador; 
         this.modelo = modelo;               
         this.precoHora = precoHora;         
-        this.disponivel = true;             
+        this.disponivel = true;
+
     }
 
     // Métodos "getters" para acessar os atributos privados:

@@ -1,4 +1,4 @@
-package com.locadora.core;
+package locadora.core;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

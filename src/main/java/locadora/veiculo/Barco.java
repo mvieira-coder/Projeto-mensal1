@@ -1,4 +1,4 @@
-package com.locadora.veiculo;
+package locadora.veiculo;
 
 public class Barco extends Veiculo {
     

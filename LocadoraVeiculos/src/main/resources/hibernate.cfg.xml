@@ -22,7 +22,7 @@
         <property name="hibernate.hbm2ddl.auto">create</property>
 
         <!-- Escanear entidades automaticamente -->
-        <mapping class="com.seupacote.EntidadeExemplo"/> <!-- ← vamos trocar depois com as entidades reais -->
+        <mapping class="locadora.veiculo.Moto"/> <!-- ← vamos trocar depois com as entidades reais -->
 
     </session-factory>
 </hibernate-configuration>

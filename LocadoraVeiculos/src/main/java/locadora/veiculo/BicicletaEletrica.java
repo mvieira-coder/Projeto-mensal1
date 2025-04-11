@@ -1,4 +1,8 @@
 package locadora.veiculo;
+import javax.persistence.*;
+
+@Entity
+@DiscriminatorValue("BicicletaEletrica")
 
 public class BicicletaEletrica extends Veiculo {
     

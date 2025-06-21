@@ -8,23 +8,25 @@
     <persistence-unit name="locadoraPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <!-- Entidades do sistema -->
+        <!-- Entidades mapeadas -->
         <class>locadora.veiculo.Veiculo</class>
         <class>locadora.veiculo.Carro</class>
         <class>locadora.veiculo.Moto</class>
         <class>locadora.veiculo.Barco</class>
         <class>locadora.core.Locacao</class>
+        <class>locadora.core.Pagamento</class>
+
 
         <properties>
-            <!-- Conexão com o PostgreSQL -->
+            <!-- Configurações do banco PostgreSQL -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/locadora_veiculos"/>
             <property name="javax.persistence.jdbc.user" value="postgres"/>
             <property name="javax.persistence.jdbc.password" value="matheus"/>
 
-            <!-- Hibernate -->
+            <!-- Configurações do Hibernate -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
         </properties>

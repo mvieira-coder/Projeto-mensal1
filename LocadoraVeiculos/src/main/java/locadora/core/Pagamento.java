@@ -1,18 +1,38 @@
 package locadora.core;
 
+import javax.persistence.*;
+import java.time.LocalDate;
+
+@Entity
 public class Pagamento {
-    private double valor;
-    private String forma;
 
-    public Pagamento(double valor) {
-        this.valor = valor;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public void selecionarFormaPagamento(String forma) {
-        this.forma = forma;
-    }
+    private LocalDate dataPagamento;
+    private double valorPago;
+    private String formaPagamento;
+    private String status;
 
-    public void processarPagamento() {
-        System.out.println("Pagamento de R$ " + valor + " via " + forma + " realizado com sucesso.");
-    }
+    @OneToOne
+    private Locacao locacao;
+
+    // Getters e Setters
+    public Long getId() { return id; }
+
+    public LocalDate getDataPagamento() { return dataPagamento; }
+    public void setDataPagamento(LocalDate dataPagamento) { this.dataPagamento = dataPagamento; }
+
+    public double getValorPago() { return valorPago; }
+    public void setValorPago(double valorPago) { this.valorPago = valorPago; }
+
+    public String getFormaPagamento() { return formaPagamento; }
+    public void setFormaPagamento(String formaPagamento) { this.formaPagamento = formaPagamento; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+
+    public Locacao getLocacao() { return locacao; }
+    public void setLocacao(Locacao locacao) { this.locacao = locacao; }
 }

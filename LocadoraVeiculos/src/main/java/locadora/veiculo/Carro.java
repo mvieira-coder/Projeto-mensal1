@@ -6,16 +6,17 @@ import javax.persistence.*;
 @DiscriminatorValue("Carro")
 public class Carro extends Veiculo {
 
-    public Carro() {} // Necessário pro Hibernate
+    public Carro() {}
 
-    public Carro(String identificador, String modelo, double precoHora) {
-        super(identificador, modelo, precoHora);
+    public Carro(String identificador, String modelo, double precoHora, int quantidade) {
+        super(identificador, modelo, precoHora, quantidade);
     }
 
     @Override
     public void exibirDetalhes() {
         System.out.println("Carro - ID: " + getIdentificador() +
                 ", Modelo: " + getModelo() +
-                ", Preço por Hora: R$ " + getPrecoHora());
+                ", Preço por Hora: R$ " + getPrecoHora() +
+                ", Quantidade: " + getQuantidade());
     }
 }

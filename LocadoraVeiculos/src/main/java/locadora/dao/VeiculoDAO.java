@@ -1,33 +1,41 @@
 package locadora.dao;
 
-import jakarta.persistence.*;
 import locadora.veiculo.Veiculo;
 
+import javax.persistence.*;
 import java.util.List;
 
 public class VeiculoDAO {
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("locadoraPU");
 
-    public void salvar(Veiculo veiculo) {
-        EntityManager em = emf.createEntityManager();
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("locadoraPU");
+    private EntityManager em = emf.createEntityManager();
+
+    public void inserir(Veiculo v) {
         em.getTransaction().begin();
-        em.persist(veiculo);
+        em.persist(v);
         em.getTransaction().commit();
-        em.close();
+    }
+
+    public void atualizar(Veiculo v) {
+        em.getTransaction().begin();
+        em.merge(v);
+        em.getTransaction().commit();
+    }
+
+    public void remover(String id) {
+        Veiculo v = buscarPorId(id);
+        if (v != null) {
+            em.getTransaction().begin();
+            em.remove(v);
+            em.getTransaction().commit();
+        }
+    }
+
+    public Veiculo buscarPorId(String id) {
+        return em.find(Veiculo.class, id);
     }
 
     public List<Veiculo> listarTodos() {
-        EntityManager em = emf.createEntityManager();
-        List<Veiculo> lista = em.createQuery("SELECT v FROM Veiculo v", Veiculo.class).getResultList();
-        em.close();
-        return lista;
-    }
-
-    public void atualizar(Veiculo veiculo) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.merge(veiculo);
-        em.getTransaction().commit();
-        em.close();
+        return em.createQuery("FROM Veiculo", Veiculo.class).getResultList();
     }
 }

@@ -11,31 +11,39 @@ public abstract class Veiculo implements Alugavel {
     private String identificador;
     private String modelo;
     private double precoHora;
-    private boolean disponivel;
+    private int quantidade;
 
-    public Veiculo() {} // Obrigatório pro JPA
+    public Veiculo() {}
 
-    public Veiculo(String identificador, String modelo, double precoHora) {
+    public Veiculo(String identificador, String modelo, double precoHora, int quantidade) {
         this.identificador = identificador;
         this.modelo = modelo;
         this.precoHora = precoHora;
-        this.disponivel = true;
+        this.quantidade = quantidade;
     }
 
-    // Getters e setters
     public String getIdentificador() { return identificador; }
     public String getModelo() { return modelo; }
     public double getPrecoHora() { return precoHora; }
-    public boolean isDisponivel() { return disponivel; }
+    public int getQuantidade() { return quantidade; }
+    public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
 
-    public void locar() { this.disponivel = false; }
-    public void devolver() { this.disponivel = true; }
+    public void reduzirEstoque() {
+        if (quantidade > 0) quantidade--;
+    }
+
+    public void aumentarEstoque() {
+        quantidade++;
+    }
+
+    public boolean isDisponivel() {
+        return quantidade > 0;
+    }
 
     @Override
     public double calcularPreco(int horas) {
         return horas * precoHora;
     }
 
-    // Método abstrato que precisa ser implementado nas subclasses
     public abstract void exibirDetalhes();
 }

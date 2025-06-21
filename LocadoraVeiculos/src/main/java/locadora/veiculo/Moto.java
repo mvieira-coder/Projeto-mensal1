@@ -8,14 +8,15 @@ public class Moto extends Veiculo {
 
     public Moto() {}
 
-    public Moto(String identificador, String modelo, double precoHora) {
-        super(identificador, modelo, precoHora);
+    public Moto(String identificador, String modelo, double precoHora, int quantidade) {
+        super(identificador, modelo, precoHora, quantidade);
     }
 
     @Override
     public void exibirDetalhes() {
         System.out.println("Moto - ID: " + getIdentificador() +
                 ", Modelo: " + getModelo() +
-                ", Preço por Hora: R$ " + getPrecoHora());
+                ", Preço por Hora: R$ " + getPrecoHora() +
+                ", Quantidade: " + getQuantidade());
     }
 }

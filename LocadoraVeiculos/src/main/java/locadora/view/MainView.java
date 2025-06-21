@@ -3,12 +3,6 @@ package locadora.view;
 import javax.swing.*;
 import java.awt.*;
 
-import locadora.view.DevolucaoView;
-
-
-
-
-
 
 public class MainView extends JFrame {
 
